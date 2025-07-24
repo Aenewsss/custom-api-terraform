@@ -1,4 +1,4 @@
 variable "project" {
-    type = string
-    default = "comunidadedevops"
+  type    = string
+  default = "comunidadedevops"
 }
