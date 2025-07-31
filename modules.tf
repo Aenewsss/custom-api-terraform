@@ -21,3 +21,10 @@ module "eks_managed_node_group" {
   subnet_private_ids = module.eks_network.subnet_private_ids
   tags               = local.tags
 }
+
+module "eks_load_balancer_controller" {
+  source = "./modules/load-balancer-controller"
+
+  project = var.project
+  tags    = local.tags
+}
