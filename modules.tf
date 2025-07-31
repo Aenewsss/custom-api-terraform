@@ -25,6 +25,8 @@ module "eks_managed_node_group" {
 module "eks_load_balancer_controller" {
   source = "./modules/load-balancer-controller"
 
-  project = var.project
-  tags    = local.tags
+  project      = var.project
+  oidc         = module.eks_cluster.oidc
+  cluster_name = module.eks_cluster.cluster_name
+  tags         = local.tags
 }
